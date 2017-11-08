@@ -1,0 +1,28 @@
+#分布式配置
+info:
+  app:
+    name: 服务发现
+    description: 终端管理注册中心
+    version: v1.0
+server:
+  port: 8001
+spring:
+  rabbitmq:
+    host: 192.168.4.216
+    port: 5672
+    username: himasoft
+    password: himasoft
+eureka:
+  instance:
+    ip-address: 192.168.4.216
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://192.168.0.177:${server.port}/eureka/
+management:
+  security:
+    enabled: false
+logging:
+  level:
+    root: info
+  path: /root/logs/eureka-server

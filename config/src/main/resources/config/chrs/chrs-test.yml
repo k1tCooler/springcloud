@@ -1,0 +1,69 @@
+server:
+  port: 8200
+logging:
+  level:
+    com:
+      himasoft:
+        mapper: debug
+    root: info
+  path: /root/logs/chrs
+  
+spring:
+  jpa:
+    show-sql: true
+    database: MYSQL
+  datasource:
+    url: jdbc:mysql://192.168.4.249:3306/chrxdb?useSSL=false&&characterEncoding=UTF-8
+    username: root
+    password: 1
+    initialize: false
+    driver-class-name: com.mysql.jdbc.Driver
+  rabbitmq:
+    host: 192.168.4.216
+    port: 5672
+    username: himasoft
+    password: himasoft
+  cache:
+    type: redis
+  redis:
+    host: 192.168.4.216
+    port: 6379
+    password: himasoft
+    database: 0
+    pool:
+      max-active: 8
+      max-wait: -1
+      max-idle: 8
+      min-idle: 0
+    timeout: 1000
+security:
+  basic:
+    enabled: false
+management:
+  security:
+    enabled: false
+
+mybatis:
+  type-aliases-package: com.himasoft.pojo
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+mapper:
+  mappers:
+  - com.himasoft.core.MyMapper
+  not-empty: false
+  identity: MYSQL
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
+info:
+  app:
+    name: 云食谱
+    description: 云食谱公共接口
+    version: v1.0
+
+chrs:
+  sqlCondition:
+    dishChangeLimit: 3

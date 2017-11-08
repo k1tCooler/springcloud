@@ -1,0 +1,30 @@
+info:
+  app:
+    name: 服务发现
+    description: 终端管理注册中心
+    version: v1.0
+server:
+  port: 8001
+spring:
+  rabbitmq:
+    host: 120.24.250.210
+    port: 5672
+    username: himasoft
+    password: py@!85910728
+eureka:
+  instance:
+    ip-address: 120.24.250.210
+    prefer-ip-address: true
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://${eureka.instance.ip-address}:${server.port}/eureka/
+management:
+  security:
+    enabled: false
+logging:
+  level:
+    root: info
+  path: /root/logs/eureka-server
+  

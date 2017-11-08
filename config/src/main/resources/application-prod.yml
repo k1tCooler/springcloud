@@ -1,0 +1,42 @@
+info:
+  app:
+    name: 配置中心8100
+    description: 配置文件管理
+    version: v1.0
+server:
+  port: 8100
+logging:
+  level:
+    root: info
+  path: /root/logs/config-server
+eureka:
+  instance:
+    ip-address: 120.24.250.210
+    prefer-ip-address: true
+  client:
+    service-url:
+      defaultZone: http://120.24.250.210:8090/eureka/
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      enabled: true
+      server:
+        native:
+          search-locations: classpath:/config
+        svn:
+          uri: svn://120.24.250.210/spring-cloud-config
+          username: pengyi
+          password: py3273102
+          default-label: null
+          search-paths:
+  rabbitmq:
+    host: 192.168.4.216
+    port: 5672
+    username: himasoft
+    password: himasoft
+management:
+  security:
+    enabled: false
+    

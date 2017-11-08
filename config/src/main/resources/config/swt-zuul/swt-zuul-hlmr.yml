@@ -1,0 +1,71 @@
+server:
+  port: 8800
+logging:
+  level:
+    root: info
+  path: /root/logs/swt-zuul
+  file: spring
+  
+eureka:
+  instance:
+    status-page-url: https://120.24.250.210:8800/info
+spring:
+  jpa:
+    show-sql: true
+    database: MYSQL
+  datasource:
+    url: jdbc:mysql://120.24.250.210:3306/cloud-recipes?useSSL=false&&characterEncoding=UTF-8
+    username: root
+    password: py@!85910728
+    initialize: false
+    driver-class-name: com.mysql.jdbc.Driver
+  rabbitmq:
+    host: 120.24.250.210
+    port: 5672
+    username: himasoft
+    password: py@!85910728
+  cache:
+    type: redis
+  redis:
+    host: 120.24.250.210
+    port: 6379
+    password: py@!85910728
+    database: 0
+    pool:
+      max-active: 8
+      max-wait: -1
+      max-idle: 8
+      min-idle: 0
+    timeout: 1000
+  sleuth:
+    sampler:
+      percentage: 1
+
+management:
+  security:
+    enabled: false
+mybatis:
+  type-aliases-package: com.himasoft.pojo
+  configuration:
+    map-underscore-to-camel-case: true
+mapper:
+  mappers:
+  - com.himasoft.core.MyMapper
+  not-empty: false
+  identity: MYSQL
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
+zuul:
+  routes:
+    pub:
+      path: /pub/**
+      service-id: public-service
+
+info:
+  app:
+    name: 网关服务
+    description: 网关智能路由中心
+    version: v1.0
