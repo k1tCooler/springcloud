@@ -1,10 +1,11 @@
+#分布式配置
 info:
   app:
     name: 配置中心
     description: 配置文件管理
-    version: v1.0
+    version: v1.0-test
 server:
-  port: 8100
+  port: 8002
 logging:
   level:
     root: info
@@ -24,13 +25,12 @@ spring:
       server:
         native:
           search-locations: classpath:/config
-        svn:
-          uri: https://192.168.4.62/svn/CHRS/himasoft-recipes/trunk/spring-cloud-server/config-server/src/main/resources/config/
-          username: csk
-          password: 123456
+        git:
+          uri: https://github.com/k1tCooler/springcloud/tree/master/config/src/main/resources/config
+          username: chenshaokangvip@163.com
+          password: 19910207kang
           default-label: null
           search-paths:
-          - eureka-server
           - chrs
           - swt-zuul
   rabbitmq:

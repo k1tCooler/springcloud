@@ -2,9 +2,10 @@ spring:
   application:
     name: config-server
   profiles:
-    include: test
-    active: 
-    - subversion
+    active:
+    - dev
+    - native
+
           
 
 

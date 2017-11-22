@@ -2,9 +2,9 @@ info:
   app:
     name: 配置中心8100
     description: 配置文件管理
-    version: v1.0
+    version: v1.0-prod
 server:
-  port: 8100
+  port: 8002
 logging:
   level:
     root: info
