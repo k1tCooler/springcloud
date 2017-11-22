@@ -1,0 +1,14 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://120.24.250.210:8090/eureka/
+spring:
+  application:
+    name: swt-zuul
+  cloud:
+    config:
+      name: swt
+      profile: zuul-hlmr
+      discovery:
+        enabled: true
+        service-id: config-server

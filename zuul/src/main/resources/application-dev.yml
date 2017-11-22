@@ -1,0 +1,14 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://192.168.0.177:8090/eureka/,http://192.168.4.216:8090/eureka/
+spring:
+  application:
+    name: swt-zuul
+  cloud:
+    config:
+      name: swt
+      profile: zuul-dev
+      discovery:
+        enabled: true
+        service-id: config-server
