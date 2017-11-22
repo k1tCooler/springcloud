@@ -6,14 +6,18 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="chrs-server" />
         <module name="config" />
         <module name="eureka" />
+        <module name="zuul" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="chrs-server" target="1.8" />
       <module name="config" target="1.8" />
       <module name="eureka" target="1.8" />
       <module name="springcloud" target="1.8" />
+      <module name="zuul" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
