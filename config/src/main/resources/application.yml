@@ -5,6 +5,7 @@ spring:
     active:
     - dev
     - native
+#    - subversion
 
           
 

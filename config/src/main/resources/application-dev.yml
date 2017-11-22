@@ -32,6 +32,14 @@ spring:
           search-paths:
           - chrs
           - swt-zuul
+        svn:
+          uri: svn://172.16.0.8/repo/config-server
+          username: himasoft
+          password: ohs!mZ8cq^&N*lUd
+          default-label: null
+          search-paths:
+          - chrs
+          - swt-zuul
   rabbitmq:
     host: 192.168.4.216
     port: 5672
